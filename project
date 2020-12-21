@@ -1,3 +1,24 @@
+# Linebot_Python_project
+# Linebot code
+# 載入需要的模組
+
+from __future__ import unicode_literals
+import os
+from flask import Flask, request, abort
+from linebot import LineBotApi, WebhookHandler
+from linebot.exceptions import InvalidSignatureError
+from linebot.models import MessageEvent, TextMessage, TextSendMessage
+
+import configparser
+
+import random
+
+app = Flask(__name__)
+
+"""
+line-bot的基本資料 (建立一個config.ini的配置檔)
+#Config.ini
+
 [line-bot]
 channel_access_token = oe2WfIxpwiG3mZMNLAos0ptoh8qVGjk78PnVHqN01AGK0wfHOOLiHBGM/sGbo0yS7V7s3oSyRlJt7N0BqZigB5Va2+cmNSZ1L9/NAv4hm5C4dEze/BJTjtljzosOrUxmdK+R3G1F5pMiTcDBdRhc6wdB04t89/1O/w1cDnyilFU=
 channel_secret = 12811d0f5a4f4fcc254aee09088b5bb8
